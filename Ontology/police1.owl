@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#"
+     xml:base="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#harCriminalRecord -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#harCriminalRecord">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasPersonalRecord"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#harCriminalRecord"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#harCriminalRecord"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#criminalRecord"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasPersonalRecord -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasPersonalRecord">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasPersonalRecord"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredOwner -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredOwner">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredOwner"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistration"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegistrationNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredVehicle -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredVehicle">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredVehicle"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistration"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegistrationNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Vehicle"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegistrationNumber -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegistrationNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegistrationNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistration"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegistrationNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isDriver -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isDriver">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isInVehicle"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isDriver"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isInVehicle -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isInVehicle"/>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isPassenger -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isPassenger">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isInVehicle"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isPassenger"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasExpiryDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasExpiryDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#vehicleRegistrationProperties"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistration"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isRentalCar -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isRentalCar">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#vehicleRegistrationProperties"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistration"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isReportedStolen -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isReportedStolen">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#vehicleRegistrationProperties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistration"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#vehicleRegistrationProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#vehicleRegistrationProperties"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Vehicle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Vehicle"/>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#criminalRecord -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#criminalRecord">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
