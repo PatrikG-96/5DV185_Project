@@ -47,9 +47,10 @@ class TestActiveSensor(ActiveSensor):
         self.max = max_value
 
     def run(self):
+        print("started")
         i = 0
         while(self.running and i <= self.max):
-            self.callback({"value" : i})
+            self.callback(self.id, {"value" : i})
             i += 1
             sleep(self.delay)
         

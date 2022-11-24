@@ -56,7 +56,7 @@ class ActiveSensorTests(unittest.TestCase):
 
 class SensorNetworkTests(unittest.TestCase):
 
-    def test_handle_dependency(self):
+    def test_query_chain(self):
 
         dictkey = "val"
         d1 = 2
@@ -65,7 +65,7 @@ class SensorNetworkTests(unittest.TestCase):
 
         sn = SensorNetwork()
 
-        s1 = TestBasicQuerySensor(1, dictkey, d1)
+        s1 = TestBasicQuerySensor(1, dictkey, 0)
         s2 = TestBasicQuerySensor(2, dictkey, d2)
         s3 = TestBasicQuerySensor(3, dictkey, d3)
 
@@ -85,20 +85,41 @@ class SensorNetworkTests(unittest.TestCase):
         chain.add_link(l2)
         chain.add_link(l3)
 
-      
 
         result = sn.execute_query_chain(chain)
 
+        self.assertEqual(result[3][dictkey], d1+d2+d3)
 
-
-        self.assertEqual(result[3][dictkey], 2*d1+d2+d3)
-
-
-    def test_sensor_dependency(self):
-        pass
 
     def test_sensor_combination(self):
-        pass
+
+        key = "val"
+        active_key = "value"
+        v1 = 1
+        delay = 5
+        frequency = 1
+        max_val = 10
+
+        expected = max(5 * frequency, max_val)
+
+        s1 = TestActiveSensor(1, frequency, max_val)
+        s2 = TestBasicQuerySensor(2, key, v1)
+
+        sn = SensorNetwork()
+
+        sn.add_sensor(s1)
+        sn.add_sensor(s2)
+
+        sn.connect_all()
+        sn.start()
+
+        sleep(5)
+
+        r1, r2 = sn.get_data(1), sn.get_data(2,{key : 0})
+
+        print(r1,r2)
+
+        self.assertEqual(r1[active_key] + r2[key], expected)
 
     def test_multiple_concurrent_sensors(self):
         pass

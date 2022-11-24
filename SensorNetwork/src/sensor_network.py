@@ -1,6 +1,11 @@
 from .sensor_base import Sensor, QuerySensor, ActiveSensor, SensorField, SensorType
 import typing
 
+
+#TODO
+# Clean up
+# fix execute chain query - final link must be a single sensor
+
 class Link:
 
     def __init__(self) -> None:
@@ -62,7 +67,6 @@ class SensorNetwork:
         self.sensor_descriptions[sensor.id] = sensor.data_description
 
         self.sensor_data[sensor.id] = {}
-        self.sensor_dependencies[sensor.id] = []
 
         for field in sensor.data_description:
             self.sensor_data[sensor.id][field.field_name] = field.default
@@ -109,20 +113,8 @@ class SensorNetwork:
             if link is None:
                 break
         
-        
-
         return output
 
-
-    def add_sensor_dependency(self, dep_sensor, sensor_id, field : SensorField):
-
-        if sensor_id not in self.sensor_data or dep_sensor not in self.sensor_data:
-            return #error
-
-        if field not in self.sensor_descriptions[sensor_id]:
-            return # error
-
-        self.sensor_dependencies[dep_sensor].append((sensor_id, field))
 
     def insert_data(self, sensor_id : int, sensor_data : dict):
 
@@ -142,15 +134,12 @@ class SensorNetwork:
 
     def get_data(self, sensor_id, input = None):
 
-        if not sensor_id in self.sensor_dependencies:
-            return self.sensor_data[sensor_id]
-
         if input is not None:
 
             self.trigger_query(sensor_id, input)
-            return self.sensor_data[sensor_id]
+            
         
-        raise Exception()
+        return self.sensor_data[sensor_id]
 
     def trigger_query(self, sensor_id, query_info):
         for sensor in self.query_sensors:

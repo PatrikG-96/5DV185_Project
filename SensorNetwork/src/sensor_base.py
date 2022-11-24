@@ -80,6 +80,7 @@ class ActiveSensor(Sensor):
         self.running = False
 
     def start(self):
+        print("started")
         self.thread.daemon = True
         self.thread.start()
         self.running = True
