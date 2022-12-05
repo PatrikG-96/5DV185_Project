@@ -348,7 +348,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistration_ABC123">
         <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord"/>
-        <hasNumberPlate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_ABC123"/>
         <policeOntology1:hasPlateNumber>ABC123</policeOntology1:hasPlateNumber>
         <policeOntology1:isReportedStolen rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</policeOntology1:isReportedStolen>
     </owl:NamedIndividual>
@@ -416,6 +415,9 @@
     <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
@@ -469,6 +471,77 @@
                         <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#threatLevel"/>
                         <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#REPORTED_THREAT_LEVEL"/>
                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infer_hasNumberPlate</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#plateNumber"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPlateNumber"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#s"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasNumberPlate"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
