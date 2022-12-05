@@ -1,8 +1,10 @@
 from abc import ABC, abstractmethod
-from .communication import HttpClient
+from ..obsolete.communication import HttpClient
 from enum import Enum
 from threading import Thread
 from cachetools import TTLCache
+import asyncio
+import aiohttp
 
 class Type(Enum):
     NUMERIC = 1,
@@ -68,7 +70,7 @@ class Sensor(ABC):
 class QuerySensor(Sensor):
 
     @abstractmethod
-    def query_sensor(self, query_info):
+    async def query_sensor(self, query_info):
         raise NotImplementedError
 
 class ActiveSensor(Sensor):
@@ -92,30 +94,98 @@ class ActiveSensor(Sensor):
     def run(self):
         raise NotImplementedError()
 
-# class CachingQuerySensor(QuerySensor):
+class RecognitionSensor(QuerySensor):
 
-#     CACHE_SIZE = 1
+    def __init__(self, id: int, model):
+        super().__init__(id)
+        self.model = model
+    
+    @abstractmethod
+    def predict(self, input):
+        raise NotImplementedError()
 
-#     def __init__(self, id: int, timeout : int):
-#         super().__init__(id)
-#         self.cache = TTLCache(maxsize=CachingQuerySensor.CACHE_SIZE, ttl = timeout)
+class SingleRequestApiSensor(QuerySensor):
 
-
-#     def __cache(self, )
-
-class ApiSensor(QuerySensor):
-
-    def __init__(self, id, url, client_get):
+    def __init__(self, id, url):
         super().__init__(id)
         self.url = url
-        self.get = client_get
 
-    def query_sensor(self, query_string):
+
+    async def query_sensor(self, query_string):
         # make request to the url (maybe add some parameters)
         # return the raw response, let subclass handle it
         if not self.connected or not self.started:
             # do something
-            return self.get(self.url + query_string)
+            
+            async with aiohttp.ClientSession() as session:
+
+                query = self.url + query_string
+
+                async with session.get(query) as response:
+
+                    result = response.json()
+
+                    return result
+
+        
+        return -1
+
+
+    def connect(self):
+        self.connected = True
+
+    def disconnect(self):
+        self.connected = False
+
+    def start(self):
+        self.started = True
+
+    def stop(self):
+        self.started = False
+
+
+class MultiRequestApiSensor(QuerySensor):
+
+    def __init__(self, id):
+        super().__init__(id)
+        self.urls = []
+
+    def add_url(self, url):
+        self.urls.append(url)
+
+    async def make_request(self, session, url):
+
+        async with session.get(url) as response:
+            result = await response.json()
+            return result
+
+    async def query_sensor(self, query_strings:list[str]):
+        # make request to the url (maybe add some parameters)
+        # return the raw response, let subclass handle it
+        if not self.connected or not self.started:
+            # do something
+            
+            if len(query_strings) != len(self.urls):
+                return -1
+
+            async with aiohttp.ClientSession() as session:
+
+                tasks = []
+                for i in range(len(query_strings)):
+                    
+                    url = self.urls[i] + query_strings[i]
+                    tasks.append(asyncio.ensure_future(self.make_request(session, url)))
+
+            gathered_result = await asyncio.gather(*tasks)   
+            
+            final_result = {}
+
+            for single_result in gathered_result:
+                final_result.update(single_result)
+
+            return final_result
+
+
         
         return -1
 
