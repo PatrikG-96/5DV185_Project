@@ -1,5 +1,7 @@
-class RegPlateRecognition:
+from abc import ABC, abstractmethod
 
-    @classmethod
-    def predict(self, image):
-        return "test"
+class Recognition(ABC):
+
+    @abstractmethod
+    def predict(self, data):
+        raise NotImplementedError()

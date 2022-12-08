@@ -1,12 +1,11 @@
 from abc import ABC, abstractmethod
-import enum
-from __future__ import annotations
-import json
+from enum import Enum
 
-class MessageType(enum):
-    USER_REQUEST = 0,
-    PREDICTION_REQUEST = 1,
-    PREDICTION_RESPONSE = 2,
+
+class MessageType(Enum):
+    USER_REQUEST = 0
+    PREDICTION_REQUEST = 1
+    PREDICTION_RESPONSE = 2
     USER_RESPONSE = 3
 
 

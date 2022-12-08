@@ -1,10 +1,11 @@
 from .sensor_base import SensorType
-from sensor_network import SensorNetwork
-from protocol import MessageType, Protocol
-from models import Model
+from .sensor_network import SensorNetwork
+from .protocol import MessageType, Protocol
+from .models import Model
 import asyncio
-from schemas import prediction_request, prediction_response, user_request, user_response, message_schema
+from .schemas import prediction_request, prediction_response, user_request, user_response, message_schema
 import json
+import logging
 
             
 ADDR = 'localhost'
@@ -27,14 +28,15 @@ class Client:
 class Service:
 
     def __init__(self, sn : SensorNetwork):
+        logging.debug('Creating service')
         self.sn = sn
         self.models : dict[str, Model]= {} 
-        self.reasoners : dict[str, asyncio.StreamWriter] = {}
         self.clients : dict[str, Client] = {}
         self.is_running = False
 
     
     def add_model(self, name, model):
+        logging.debug('Adding model')
         self.models[name] = model
 
     async def connect_reasoner(self, name, host, port):
@@ -93,36 +95,47 @@ class Service:
 
     async def __handle_user(self, reader, writer):
 
-        #################################
-        #            Start 1            #
-        #################################
-        
+
+        logging.debug('Handling client...')
         msg = None
 
         # generate id
         id = 1
 
+        logging.debug(f'Assigning user id: {id}')
+
         self.clients[id] = Client(id, reader, writer)
+
+        empty = b''
 
         while msg != "quit":
 
+            logging.debug("Waiting for user request...")
             raw = (await reader.read(255)).decode('utf8')
 
-            errors = message_schema.validate(raw)
+            if reader.at_eof():
+                break
 
-            if errors:
-                pass
-                #handle error
+            logging.debug(f"Recieved user request : '{raw}'")
 
             msg = json.loads(raw)
 
-            type =  msg['type']
+            errors = message_schema.validate(msg)
 
-            if type == MessageType.USER_REQUEST:
+            if errors:
+                logging.debug(f"Failed to validate user request with errors: '{errors}'")
+                pass
+                #handle error
+
+            
+
+            type =  msg['type']
+            if int(type) == MessageType.USER_REQUEST.value:
                 
                 errors = user_request.validate(msg)
 
                 if errors:
+                    logging.debug(f"Failed to validate user request with errors: '{errors}'")
                     pass
                     #handle error
 
@@ -130,29 +143,26 @@ class Service:
 
                 model = self.models[model_name]
 
+                logging.debug("Filling model with sensor data...")
+
+          
                 await model.fill_sensor_data(self.sn)
+           
 
-                result = model.data
+                result = model.perform_reasoning()
 
-                ################################
-                #            Start 2           #
-                ################################
-                # generate sequence number
-                seq = Protocol.seq()
+                logging.debug(f"Model reasoning: {result}")
 
-                pred_req = {'type' : MessageType.PREDICTION_REQUEST,'client' : id, 'seq' : seq, 'data' : result}
-
-                rwriter = self.reasoners[model_name]
-
-                rwriter.write(json.dumps(pred_req).encode('utf-8'))
-
-  
+                writer.write(result.encode())
+                await writer.drain()
 
 
       
 
     async def start(self):
+        logging.debug('Starting service')
         self.is_running = True
         server = await asyncio.start_server(self.__handle_user, ADDR, PORT)
         async with server:
             await server.serve_forever()
+            logging.debug('Service online')

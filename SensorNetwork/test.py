@@ -2,7 +2,7 @@ import unittest
 from time import sleep
 from test.endpoints import TestHttpClient, TestEndpoint
 from test.test_sensors import TestApiSensor, TestActiveSensor, TestBasicQuerySensor, SensorType
-from src.sensor_network import SensorNetwork, QueryChain, Link
+from src.framework.sensor_network import SensorNetwork, QueryChain, Link
 
 class ApiSensorTests(unittest.TestCase):
 

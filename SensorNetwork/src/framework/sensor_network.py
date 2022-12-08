@@ -1,8 +1,7 @@
 from .sensor_base import Sensor, QuerySensor, ActiveSensor, SensorField, SensorType
 import typing
-from util import copy_dict_subset
 from abc import ABC, abstractmethod
-
+import logging
 
 
 
@@ -16,6 +15,8 @@ class SensorNetwork:
         self.sensor_dependencies = {}
 
     def add_sensor(self, sensor : Sensor):
+
+        logging.debug(f"Adding sensor '{sensor.id}'")
         
         self.sensor_descriptions[sensor.id] = sensor.data_description
 
@@ -40,6 +41,8 @@ class SensorNetwork:
 
     async def get_data(self, sensor_id, input = None):
 
+        logging.debug(f"Getting data for sensor '{sensor_id}', input: {input}")
+
         if input is not None:
 
             await self.trigger_query(sensor_id, input)       
@@ -47,10 +50,17 @@ class SensorNetwork:
         return self.sensor_data[sensor_id]
 
     async def trigger_query(self, sensor_id, query_info):
+
+        logging.debug("Finding query sensor")
+
         for sensor in self.query_sensors:
             
             if sensor.id == sensor_id:
+                logging.debug("Found sensor, performing query")
+                
                 result = await sensor.query_sensor(query_info)
+    
+                logging.debug("Query done")
                 self.sensor_data[sensor_id] = result
                 return
         raise Exception()

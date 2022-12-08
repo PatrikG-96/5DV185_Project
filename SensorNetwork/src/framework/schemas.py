@@ -16,7 +16,7 @@ class MessageSchema(Schema):
     class Meta:
         unknown = INCLUDE
     
-    type = fields.String(required = True)
+    type = fields.Int(required = True)
 
 class UserRequestSchema(MessageSchema):
 
@@ -25,7 +25,6 @@ class UserRequestSchema(MessageSchema):
 
     @validates('user_id')
     def is_user(self, value):
-        # make sure user exists
         pass
 
     @validates("model_name")

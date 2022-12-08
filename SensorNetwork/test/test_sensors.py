@@ -1,4 +1,4 @@
-from src.sensor_base import ActiveSensor, QuerySensor, Type, ApiSensor, SensorField, SensorType
+from src.framework.sensor_base import ActiveSensor, QuerySensor, Type, ApiSensor, SensorField, SensorType
 from time import sleep
 from threading import Thread
 
