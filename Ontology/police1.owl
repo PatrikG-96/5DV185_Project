@@ -326,12 +326,29 @@
     
 
 
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person_JohnSmith -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person_JohnSmith">
+        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_ABC123 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_ABC123">
         <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CurrentlyScannedNumberPlate"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
         <policeOntology1:plateNumber>ABC123</policeOntology1:plateNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_XYZ789 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_XYZ789">
+        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
+        <policeOntology1:plateNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XYZ789</policeOntology1:plateNumber>
     </owl:NamedIndividual>
     
 
@@ -350,6 +367,16 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord"/>
         <policeOntology1:hasPlateNumber>ABC123</policeOntology1:hasPlateNumber>
         <policeOntology1:isReportedStolen rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</policeOntology1:isReportedStolen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistration_XYZ789 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistration_XYZ789">
+        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord"/>
+        <hasRegisteredOwner rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person_JohnSmith"/>
+        <policeOntology1:hasPlateNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XYZ789</policeOntology1:hasPlateNumber>
     </owl:NamedIndividual>
     
 
