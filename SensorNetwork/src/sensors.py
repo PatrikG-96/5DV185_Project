@@ -31,7 +31,7 @@ class ThreatInformationSensor(MultiRequestApiSensor):
         logging.debug("Query for threat information...")
 
         if isinstance(query_strings, list):
-            api_result =  await super().query_sensor(query_strings)
+            api_result = await super().query_sensor(query_strings)
         elif isinstance(query_strings, str):
             api_result = await super().query_sensor([query_strings]*len(self.urls))
 

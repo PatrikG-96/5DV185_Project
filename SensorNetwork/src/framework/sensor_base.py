@@ -138,11 +138,6 @@ class SingleRequestApiSensor(QuerySensor):
                 async with session.post(query, json=form) as response:
                     
                         return await response.json()
-               
-     
-
-         
-
         
         return -1
 
@@ -166,16 +161,12 @@ class MultiRequestApiSensor(QuerySensor):
         super().__init__(id)
         self.urls = urls
 
-
-
     async def make_request(self, session, url, json):
 
         async with session.post(url, json=json) as response:
             
                 return await response.json()
  
-        
-  
 
     async def query_sensor(self, forms : list[dict]):
         # make request to the url (maybe add some parameters)

@@ -10,4 +10,4 @@ class ThreatReasoner(Reasoner):
         
         logging.debug(f"Performing reasoning on data: '{data}'")
         
-        return "reasoned"
+        return {"threat_level": 10, "gun_owner": data["gun_ower"]}
