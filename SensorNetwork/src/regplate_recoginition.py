@@ -151,6 +151,14 @@ class RegPlateRecognition(Recognition):
 
     def __init__(self) -> None:
         super().__init__()
+        self.anpr = ANPR(debugMode=False)
 
-    def predict(self, data):
-        return "XXXXXX"
+    def debug_mode(self, mode : bool) -> None:
+        self.anpr.debug = mode
+
+    def predict(self, data : dict) -> str:
+        
+        if not data.get("image"):
+            return
+
+        return self.anpr.find_license_plate(image=data['image'])

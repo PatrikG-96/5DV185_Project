@@ -1,88 +1,60 @@
 from abc import ABC, abstractmethod
 from enum import Enum
 from threading import Thread
+from .recognition import Recognition
 import asyncio
 import aiohttp
 import json
 import logging
 
-class Type(Enum):
-    NUMERIC = 1,
-    TEXT = 2
+log = logging.getLogger()
 
-class SensorType(Enum):
-    NONE = -1
-    QUERY = 0,
-    ACTIVE = 1
-
-class SensorField:
-
-    def __init__(self, field_name, type, default):
-        self.field_name = field_name
-        self.default = default
-        self.type = type
-
-    def __eq__(self, __o: object) -> bool:
-        if not isinstance(__o, SensorField):
-            return False
-        return self.field_name == __o.field_name and self.type == __o.type and self.default == __o.default
-
-
-class Field:
-
-    def __init__(self, name, type):
-        self.name = name
-        self.type = type
-
-"""
-Base abstract Sensor class. Defines simple methods that all sensor should have
-
-Attributes:
-    id (int): identifier for sensor
-    data_description (dict): key value pairs for all data fields of the sensor. Key is the field name,
-                             value is a tuple of the type (see Type enum) and a default value
-"""
 class Sensor(ABC):
+    """
+    Base abstract Sensor class. Defines simple methods that all sensor should have
+
+    Attributes:
+        id (int): identifier for sensor
+        
+    """
 
     def __init__(self, id : int):
         self.id = id
         self.connected = False
         self.started = False
-        self.data_description = {}
 
     @abstractmethod
-    def connect(self):
-        raise NotImplementedError
+    def connect(self) -> None:
+        raise NotImplementedError()
 
     @abstractmethod
-    def disconnect(self):
-        raise NotImplementedError
+    def disconnect(self) -> None:
+        raise NotImplementedError()
 
     @abstractmethod
-    def start(self):
-        raise NotImplementedError
+    def start(self) -> None:
+        raise NotImplementedError()
 
     @abstractmethod
-    def stop(self):
-        raise NotImplementedError
+    def stop(self) -> None:
+        raise NotImplementedError()
 
 
 class QuerySensor(Sensor):
 
     @abstractmethod
-    async def query_sensor(self, query_info):
-        raise NotImplementedError
+    async def query_sensor(self, query_info : dict):
+        raise NotImplementedError()
 
 class ActiveSensor(Sensor):
 
-    def __init__(self, id):
+    def __init__(self, id : int) -> None:
         super().__init__(id)
         self.callback = None
         self.thread = Thread(target = self.run)
         self.running = False
 
     def start(self):
-        print("started")
         self.thread.daemon = True
         self.thread.start()
         self.running = True
@@ -91,16 +63,16 @@ class ActiveSensor(Sensor):
         self.running = False
 
     @abstractmethod
-    def run(self):
+    def run(self) -> None:
         raise NotImplementedError()
 
 class RecognitionSensor(QuerySensor):
 
-    def __init__(self, id: int, model):
+    def __init__(self, id: int, model : Recognition) -> None:
         super().__init__(id)
         self.model = model
     
-    async def query_sensor(self, query_info):
+    async def query_sensor(self, query_info : dict) -> dict:
         return self.model.predict(query_info)
 
     def connect(self):
@@ -118,22 +90,19 @@ class RecognitionSensor(QuerySensor):
 
 class SingleRequestApiSensor(QuerySensor):
 
-    def __init__(self, id, url):
+    def __init__(self, id : int, url : str) -> None:
         super().__init__(id)
         self.url = url
 
 
-    async def query_sensor(self, form):
-        # make request to the url (maybe add some parameters)
-        # return the raw response, let subclass handle it
-        if not self.connected or not self.started:
-            # do something
-   
+    async def query_sensor(self, form : dict) -> dict:
 
+        if not self.connected or not self.started:
+  
             async with aiohttp.ClientSession(json_serialize=json.dumps) as session:
 
                 query = self.url
-                logging.debug(f"Making request to {query} with data {form}")
+                log.debug(f"Making request to {query} with data {form}")
                 
                 async with session.post(query, json=form) as response:
                     
@@ -157,18 +126,18 @@ class SingleRequestApiSensor(QuerySensor):
 
 class MultiRequestApiSensor(QuerySensor):
 
-    def __init__(self, id, urls):
+    def __init__(self, id : int, urls : list[str]) -> None:
         super().__init__(id)
         self.urls = urls
 
-    async def make_request(self, session, url, json):
+    async def __make_request(self, session, url, json):
 
         async with session.post(url, json=json) as response:
             
                 return await response.json()
  
 
-    async def query_sensor(self, forms : list[dict]):
+    async def query_sensor(self, forms : list[dict]) -> dict:
         # make request to the url (maybe add some parameters)
         # return the raw response, let subclass handle it
         if not self.connected or not self.started:
@@ -181,14 +150,14 @@ class MultiRequestApiSensor(QuerySensor):
             async with aiohttp.ClientSession(json_serialize=json.dumps) as session:
 
 
-                gathered_result = await asyncio.gather(*[self.make_request(session, self.urls[i], forms[i]) for i in range(len(forms))], return_exceptions=True)
+                gathered_result = await asyncio.gather(*[self.__make_request(session, self.urls[i], forms[i]) for i in range(len(forms))], return_exceptions=True)
             
 
 
             for single_result in gathered_result:
                 final_result.update(single_result)
 
-            logging.debug("Session closed") 
+            log.debug("Session closed") 
             return final_result
 
 

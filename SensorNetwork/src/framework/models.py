@@ -13,7 +13,7 @@ class Model(ABC):
         self.data = {}
 
     @abstractmethod
-    async def fill_sensor_data(self, sensor_network : SensorNetwork):
+    async def fill_sensor_data(self, sensor_network : SensorNetwork) -> None:
         raise NotImplementedError()
 
     @abstractmethod

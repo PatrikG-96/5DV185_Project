@@ -7,5 +7,5 @@ class Reasoner(ABC):
         self.onto = ontology
 
     @abstractmethod
-    def reason(self, data : dict):
+    def reason(self, data : dict) -> dict:
         raise NotImplementedError()

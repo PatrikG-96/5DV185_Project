@@ -12,37 +12,37 @@ path = "C:/Users/shirt/5DV185_Project/SensorNetwork/src"
 
 async def main():
 
-    # logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.DEBUG)
 
-    # model = ThreatRecognitionModel(ThreatReasoner(None))
+    model = ThreatRecognitionModel(ThreatReasoner(None))
 
-    # sn = SensorNetwork()
+    sn = SensorNetwork()
 
-    # reg_plate = RegistrationPlateSensor(REG_PLATE_ID, RegPlateRecognition())
-    # suspect_name = RegistrationNameSensor(REG_NAME_ID, URL_API+"/regplate")
-    # threat_data = ThreatInformationSensor(THREAT_ID, [URL_API+"/criminal", URL_API+"/gunowner"])
+    reg_plate = RegistrationPlateSensor(REG_PLATE_ID, RegPlateRecognition())
+    suspect_name = RegistrationNameSensor(REG_NAME_ID, URL_API+"/regplate")
+    threat_data = ThreatInformationSensor(THREAT_ID, [URL_API+"/criminal", URL_API+"/gunowner"])
 
-    # sn.add_sensor(reg_plate)
-    # sn.add_sensor(suspect_name)
-    # sn.add_sensor(threat_data)
+    sn.add_sensor(reg_plate)
+    sn.add_sensor(suspect_name)
+    sn.add_sensor(threat_data)
 
-    # service = Service(sn)
+    service = Service(sn)
 
-    # service.add_model("threat_model", model)
+    service.add_model("threat_model", model)
 
-    # await service.start()
+    await service.start()
 
-    anpr = ANPR(debugMode=True)
+    # anpr = ANPR(debugMode=True)
 
-    image = cv2.imread(path+"/test1_success.png")
+    # image = cv2.imread(path+"/test1_success.png")
 
-    image = image.astype('uint8')
+    # image = image.astype('uint8')
 
-    image = imutils.resize(image, width=600)
+    # image = imutils.resize(image, width=600)
 
-    text = anpr.find_license_plate(image, clear_border=False)
+    # text = anpr.find_license_plate(image, clear_border=False)
 
-    print(text)
+    # print(text)
 
     # config_path = "C:/Users/shirt/5DV185_Project/SensorNetwork/data/yolo4-obj.cfg"
     # data_path = "C:/Users/shirt/5DV185_Project/SensorNetwork/data/obj.data"
