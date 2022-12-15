@@ -45,7 +45,7 @@
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasASP-Record -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasASP-Record">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasPersonalRecord"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPersonalRecord"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CriminalRecord"/>
     </owl:ObjectProperty>
     
@@ -54,7 +54,7 @@
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasCriminalRecord -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasCriminalRecord">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasPersonalRecord"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPersonalRecord"/>
     </owl:ObjectProperty>
     
 
@@ -62,81 +62,81 @@
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasFirearmOwnershipRecord -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasFirearmOwnershipRecord">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasPersonalRecord"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPersonalRecord"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasNumberPlate -->
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasNumberPlate -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasNumberPlate">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasNumberPlate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#vehicleRegistrationRecords"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasPersonalRecord -->
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPersonalRecord -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasPersonalRecord">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPersonalRecord">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredOwner -->
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasRegisteredOwner -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredOwner">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasRegisteredOwner">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#vehicleRegistrationRecords"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredVehicle -->
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasRegisteredVehicle -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredVehicle">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasRegisteredVehicle">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#vehicleRegistrationRecords"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Vehicle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Vehicle"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isDriver -->
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isDriver -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isDriver">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isInVehicle"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Vehicle"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isDriver">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isInVehicle"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Vehicle"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isInVehicle -->
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isInVehicle -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isInVehicle">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Vehicle"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isInVehicle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Vehicle"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isPassenger -->
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isPassenger -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isPassenger">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#isInVehicle"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Vehicle"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isPassenger">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#isInVehicle"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Vehicle"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords -->
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#vehicleRegistrationRecords -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#vehicleRegistrationRecords"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#vehicleRegistrationRecords"/>
     
 
 
@@ -275,7 +275,7 @@ Notably, personID will be used to match the same person between records, e.g. ve
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#personID">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#generalRecordProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Record"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -285,7 +285,7 @@ Notably, personID will be used to match the same person between records, e.g. ve
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#personName">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#generalRecordProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Record"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -294,8 +294,18 @@ Notably, personID will be used to match the same person between records, e.g. ve
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#personProperties -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#personProperties">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
         <rdfs:comment>properties pertaining to a Person entity, notably hasPersonID should correspond to a personID from generalRecordPrroperties for matching to be possible</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#plateNotes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#plateNotes">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#scannedNumberPlateProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CurrentlyScannedNumberPlate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -304,8 +314,18 @@ Notably, personID will be used to match the same person between records, e.g. ve
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#plateNumber">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#plateThreatLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#plateThreatLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#scannedNumberPlateProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CurrentlyScannedNumberPlate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
@@ -316,6 +336,14 @@ Notably, personID will be used to match the same person between records, e.g. ve
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#crimeRecordProperties"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CriminalRecord"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#scannedNumberPlateProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#scannedNumberPlateProperties">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CurrentlyScannedNumberPlate"/>
     </owl:DatatypeProperty>
     
 
@@ -358,7 +386,7 @@ Notably, personID will be used to match the same person between records, e.g. ve
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#ASP-Record -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#ASP-Record">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Record"/>
     </owl:Class>
     
 
@@ -374,7 +402,7 @@ Notably, personID will be used to match the same person between records, e.g. ve
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CriminalRecord -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CriminalRecord">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Record"/>
         <rdfs:comment>uses own string Data property recordedCrime
 also uses general data properties date and personID to match to person and time of crime (committed? sentencing? doesn&apos;t matter here but would need to be fleshed out in full ontology)
 string recordedCrime must correspond to a value for crimeName for a CrimeThreatRating entity for crime to factor into threat assessment</rdfs:comment>
@@ -385,7 +413,7 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CurrentlyScannedNumberPlate -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CurrentlyScannedNumberPlate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate"/>
         <rdfs:comment>To indicate the number plate currently being scanned, should only hold one individual at at time, not sure how to ensure that yet</rdfs:comment>
     </owl:Class>
     
@@ -394,7 +422,7 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#FirearmOwnershipRecord -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#FirearmOwnershipRecord">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Record"/>
     </owl:Class>
     
 
@@ -407,12 +435,30 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
     
 
 
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate"/>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
+    
+
+
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#PersonToBeChecked -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#PersonToBeChecked">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
         <rdfs:comment>person on which to run the threat reasoning rules - typically the owner of a car that&apos;s not stolen and not a rental - may extend this to apply to associates mentioned in ASP later</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Record -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Record"/>
     
 
 
@@ -424,35 +470,17 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
     
 
 
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Vehicle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Vehicle"/>
+    
+
+
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Record"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
-    
-
-
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
-    
-
-
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
-    
-
-
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Vehicle -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Vehicle"/>
     
 
 
@@ -500,7 +528,7 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person_JohnSmith -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person_JohnSmith">
-        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
         <policeOntology1:hasPersonID>#JohnSmithID</policeOntology1:hasPersonID>
         <policeOntology1:hasPersonName>John Smith</policeOntology1:hasPersonName>
     </owl:NamedIndividual>
@@ -510,7 +538,7 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_ABC123 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_ABC123">
-        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate"/>
         <policeOntology1:plateNumber>ABC123</policeOntology1:plateNumber>
     </owl:NamedIndividual>
     
@@ -519,8 +547,7 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
     <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_XYZ789 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_XYZ789">
-        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CurrentlyScannedNumberPlate"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate"/>
         <policeOntology1:plateNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XYZ789</policeOntology1:plateNumber>
     </owl:NamedIndividual>
     
@@ -594,20 +621,20 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Record"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#ThreatReasoningEntities"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Vehicle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Vehicle"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Record"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Vehicle"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Record"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Vehicle"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -761,8 +788,8 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#p"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CriminalRecord"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -770,10 +797,9 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPersonID"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
                                 <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#p"/>
-                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#id"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -781,9 +807,10 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                 <rdf:first>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CriminalRecord"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#personID"/>
                                         <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#id"/>
                                     </rdf:Description>
                                 </rdf:first>
                                 <rdf:rest>
@@ -792,8 +819,8 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                                         <rdf:first>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#personID"/>
-                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPersonID"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#p"/>
                                                 <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#id"/>
                                             </rdf:Description>
                                         </rdf:first>
@@ -831,9 +858,10 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CurrentlyScannedNumberPlate"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasRegisteredOwner"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#p"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -842,7 +870,7 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasNumberPlate"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasNumberPlate"/>
                                 <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
                                 <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
                             </rdf:Description>
@@ -852,10 +880,9 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                 <rdf:first>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredOwner"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
-                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#p"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CurrentlyScannedNumberPlate"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
                                     </rdf:Description>
                                 </rdf:first>
                                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -900,9 +927,10 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CurrentlyScannedNumberPlate"/>
-                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasNumberPlate"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -910,10 +938,9 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                 <rdf:first>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasNumberPlate"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
-                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#CurrentlyScannedNumberPlate"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
                                     </rdf:Description>
                                 </rdf:first>
                                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -934,7 +961,33 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</swrl:argument2>
                     </rdf:Description>
                 </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#plateThreatLevel"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#plateNotes"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
+                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vehicle stolen</swrl:argument2>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
             </rdf:Description>
         </swrl:head>
     </rdf:Description>
@@ -948,9 +1001,10 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#NumberPlate"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPlateNumber"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#s"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -958,10 +1012,9 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#plateNumber"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate"/>
                                 <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
-                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#s"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -980,8 +1033,8 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                                         <rdf:first>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPlateNumber"/>
-                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#plateNumber"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
                                                 <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#s"/>
                                             </rdf:Description>
                                         </rdf:first>
@@ -1000,7 +1053,7 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasNumberPlate"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasNumberPlate"/>
                         <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
                         <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#np"/>
                     </rdf:Description>
@@ -1020,8 +1073,8 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#p"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -1029,9 +1082,10 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#Person"/>
-                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#p"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#personID"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#id"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -1040,8 +1094,8 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#personID"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPersonID"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#p"/>
                                         <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#id"/>
                                     </rdf:Description>
                                 </rdf:first>
@@ -1050,10 +1104,9 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                         <rdf:first>
                                             <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasPersonID"/>
-                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#p"/>
-                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#id"/>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
                                             </rdf:Description>
                                         </rdf:first>
                                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -1071,7 +1124,7 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#hasRegisteredOwner"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#hasRegisteredOwner"/>
                         <swrl:argument1 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#r"/>
                         <swrl:argument2 rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/untitled-ontology-6#p"/>
                     </rdf:Description>
