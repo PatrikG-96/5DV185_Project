@@ -214,6 +214,19 @@ def getCriminalRecordThreatEstimate(nr="ABC123"):
         q = default_world.sparql(s)
     return list(q)
 
+
+def getASPThreatLevels(nr="ABC123"):
+    s = PREFIX + """ SELECT ?e WHERE{
+        ?record fnord:hasPlateNumber \""""+nr+"""\"
+        ?record fnord:hasRegisteredOwner ?person
+        ?person fnord:associateCriminalRecordThreatEstimate ?e
+
+    }"""
+    with onto:
+        q = default_world.sparql(s)
+    return flatten(list(q))
+
+
 #appears not to work for some raeson
 # perhaps we can find a way to work around this
 def clearCurrentNumberPlate():
