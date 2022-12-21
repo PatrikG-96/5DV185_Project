@@ -45,6 +45,19 @@ class QuerySensor(Sensor):
     @abstractmethod
     async def query_sensor(self, query_info : dict):
         raise NotImplementedError()
+    
+    def connect(self):
+        self.connected = True
+
+    def disconnect(self):
+        self.connected = False
+
+    def start(self):
+        self.started = True
+
+    def stop(self):
+        self.started = False
+
 
 class ActiveSensor(Sensor):
 
@@ -97,7 +110,7 @@ class SingleRequestApiSensor(QuerySensor):
 
     async def query_sensor(self, form : dict) -> dict:
 
-        if not self.connected or not self.started:
+        if self.connected and self.started:
   
             async with aiohttp.ClientSession(json_serialize=json.dumps) as session:
 
@@ -108,21 +121,11 @@ class SingleRequestApiSensor(QuerySensor):
                     
                         return await response.json()
         
+        log.debug("not started or conneted")
         return -1
 
 
-    def connect(self):
-        self.connected = True
-
-    def disconnect(self):
-        self.connected = False
-
-    def start(self):
-        self.started = True
-
-    def stop(self):
-        self.started = False
-
+    
 
 class MultiRequestApiSensor(QuerySensor):
 
@@ -140,7 +143,7 @@ class MultiRequestApiSensor(QuerySensor):
     async def query_sensor(self, forms : list[dict]) -> dict:
         # make request to the url (maybe add some parameters)
         # return the raw response, let subclass handle it
-        if not self.connected or not self.started:
+        if self.connected and self.started:
             # do something
             
             if len(forms) != len(self.urls):
@@ -161,6 +164,7 @@ class MultiRequestApiSensor(QuerySensor):
             return final_result
 
 
+        log.debug("not started/connected")
         
         return -1
 

@@ -6,15 +6,21 @@ from .schemas import prediction_request, prediction_response, user_request, user
 import json
 from enum import Enum
 import logging
-
+import base64
+import numpy as np
+import cv2
+import io
+from PIL import Image
+import imutils
             
-ADDR = 'localhost'
+ADDR = '0.0.0.0'
 PORT = 1337
 
 log = logging.getLogger()
 
 class MessageType(Enum):
-    USER_REQUEST = 0
+    USER_REQUEST = 0,
+    USER_RESPONSE = 1
 
 class Service:
 
@@ -32,6 +38,43 @@ class Service:
         log.debug('Adding model')
         self.models[name] = model
      
+    async def __test(self, reader : StreamReader, writer):
+        
+        data = bytearray()
+        i = 0
+        print("connected")
+        
+        header = (await reader.readexactly(10)).decode("utf8")
+        
+        size = int(header.replace('.', ''))
+        
+        chunk_size = 1024
+        
+        chunks = round(size/chunk_size + 0.5)
+        
+        print(f"{chunks} chunks")
+        
+        for i in range(chunks):
+            #print("waiting...")
+            braw = await reader.read(1024)
+            #print("reading chunk")
+            data += braw
+        
+        try:
+            decoded = data.decode()
+            msg = json.loads(decoded)        
+            decoded_image = base64.b64decode(msg['image'])
+            image = Image.open(io.BytesIO(decoded_image))
+            opencvImage = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+            im = opencvImage.astype("uint8")
+            im = imutils.resize(im, width=600)
+            
+            msg['image'] = im
+    
+        except Exception as e:
+            print(e)
+        
+        return msg
 
     async def __handle_user(self, reader : StreamReader, writer : StreamWriter) -> None:
         """
@@ -40,31 +83,19 @@ class Service:
 
         log.debug('Handling client...')
         print("connected")
-
-
-
+        
         msg = None
 
         while msg != "quit":
 
             log.debug("Waiting for user request...")
 
-            raw = (await reader.read(255)).decode('utf8')
+            #raw = (await reader.read(1024)).decode('utf8')
 
-            writer.write("hej".encode())
-
-            if reader.at_eof():
-                break
-
-            log.debug(f"Recieved user request : '{raw}'")
-
-            try:
-                msg = json.loads(raw)
-            except:
-                print("not json")
-                continue
-
-            errors = message_schema.validate(msg)
+            msg = await self.__test(reader, writer)
+            
+            #errors = message_schema.validate(msg)
+            errors = False
 
             if errors:
                 log.debug(f"Failed to validate user request with errors: '{errors}'")
@@ -74,9 +105,12 @@ class Service:
             
 
             type =  msg['type']
-            if int(type) == MessageType.USER_REQUEST.value:
+            print(type, MessageType.USER_REQUEST.value)
+            if int(type) in MessageType.USER_REQUEST.value:
                 
-                errors = user_request.validate(msg)
+                
+                #errors = user_request.validate(msg)
+                errors = False
 
                 if errors:
                     log.debug(f"Failed to validate user request with errors: '{errors}'")
@@ -90,14 +124,17 @@ class Service:
                 log.debug("Filling model with sensor data...")
 
           
-                await model.fill_sensor_data(self.sn)
+                await model.fill_sensor_data(msg, self.sn)
            
 
                 result = model.perform_reasoning()
 
                 log.debug(f"Model reasoning: {result}")
 
-                writer.write(result.encode())
+                json_result = json.dumps(result)
+                
+                writer.write(json_result.encode())
+                #writer.write("hej".encode())
                 await writer.drain()
 
 
@@ -106,6 +143,8 @@ class Service:
     async def start(self) -> None:
         log.debug('Starting service')
         self.is_running = True
+        self.sn.connect_all()
+        self.sn.start()
         server = await start_server(self.__handle_user, ADDR, PORT)
         async with server:
             await server.serve_forever()

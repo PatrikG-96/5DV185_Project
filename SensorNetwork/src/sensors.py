@@ -12,9 +12,10 @@ class RegistrationNameSensor(SingleRequestApiSensor):
     def __init__(self, id, url):
         super().__init__(id, url)
 
-    async def query_sensor(self, query_string):
+    async def query_sensor(self, query_form):
         logging.debug("Query for name...")
-        api_result =  await super().query_sensor(query_string)
+        
+        api_result =  await super().query_sensor(query_form)
         
         # here we need to filter out some data
         logging.debug("Query done")

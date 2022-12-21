@@ -22,6 +22,7 @@ class UserRequestSchema(MessageSchema):
 
     user_id = fields.Int(required = True)
     model_name = fields.Str(required = True)
+    image = fields.Str(required=True)
 
     @validates('user_id')
     def is_user(self, value):

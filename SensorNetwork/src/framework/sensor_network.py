@@ -51,7 +51,7 @@ class SensorNetwork:
         Returns:
             dictionary containing all the sensor data
         """
-        log.debug(f"Getting data for sensor '{sensor_id}', input: {input}")
+        #log.debug(f"Getting data for sensor '{sensor_id}', input: {input}")
 
         if input is not None:
 
@@ -90,7 +90,7 @@ class SensorNetwork:
         for a_s in self.active_sensors:
             a_s.connect()
         for q_s in self.query_sensors:
-            q_s.disconnect()
+            q_s.connect()
 
     def disconnect_all(self) -> None:
         """

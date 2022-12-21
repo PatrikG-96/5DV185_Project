@@ -7,6 +7,7 @@ from regplate_recoginition import RegPlateRecognition, ANPR, cv2, imutils
 import logging
 import asyncio
 
+
 URL_API = "http://127.0.0.1:5000"
 path = "C:/Users/shirt/5DV185_Project/SensorNetwork/src"
 
@@ -14,13 +15,13 @@ async def main():
 
     logging.basicConfig(level=logging.DEBUG)
 
-    model = ThreatRecognitionModel(ThreatReasoner(None))
+    model = ThreatRecognitionModel(ThreatReasoner(path+"/ontology.owl"))
 
     sn = SensorNetwork()
 
     reg_plate = RegistrationPlateSensor(REG_PLATE_ID, RegPlateRecognition())
     suspect_name = RegistrationNameSensor(REG_NAME_ID, URL_API+"/regplate")
-    threat_data = ThreatInformationSensor(THREAT_ID, [URL_API+"/criminal", URL_API+"/gunowner"])
+    threat_data = ThreatInformationSensor(THREAT_ID, [URL_API+"/criminal", URL_API+"/gunowner", URL_API+"/asp"])
 
     sn.add_sensor(reg_plate)
     sn.add_sensor(suspect_name)
