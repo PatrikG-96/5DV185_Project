@@ -1246,7 +1246,16 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person_Snällbert">
         <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Person"/>
         <policeOntology1:hasPersonID>#SnällbertID</policeOntology1:hasPersonID>
-        <policeOntology1:hasPersonName>Snällbert</policeOntology1:hasPersonName>
+        <policeOntology1:hasPersonName>Albert Svensson</policeOntology1:hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_ABC123 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_ABC123">
+        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate"/>
+        <policeOntology1:plateNumber>ABC123</policeOntology1:plateNumber>
     </owl:NamedIndividual>
     
 
@@ -1256,15 +1265,6 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_B5BTJ">
         <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate"/>
         <policeOntology1:plateNumber>B5BTJ</policeOntology1:plateNumber>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_FEM555 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#Plate_FEM555">
-        <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#NumberPlate"/>
-        <policeOntology1:plateNumber>FEM555</policeOntology1:plateNumber>
     </owl:NamedIndividual>
     
 
@@ -1286,20 +1286,20 @@ string recordedCrime must correspond to a value for crimeName for a CrimeThreatR
     
 
 
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistration_B5BTJ -->
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistration_ABC123 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistration_B5BTJ">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistration_ABC123">
         <rdf:type rdf:resource="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistrationRecord"/>
-        <policeOntology1:hasPlateNumber>B5BTJ</policeOntology1:hasPlateNumber>
+        <policeOntology1:hasPlateNumber>ABC123</policeOntology1:hasPlateNumber>
         <policeOntology1:isReportedStolen rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</policeOntology1:isReportedStolen>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistration_FEM555 -->
+    <!-- http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistration_B5BTJ -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistration_FEM555">
-        <policeOntology1:hasPlateNumber>FEM555</policeOntology1:hasPlateNumber>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/klaus/ontologies/2022/10/policeOntology1#VehicleRegistration_B5BTJ">
+        <policeOntology1:hasPlateNumber>B5BTJ</policeOntology1:hasPlateNumber>
         <policeOntology1:personID>#SnällbertID</policeOntology1:personID>
     </owl:NamedIndividual>
     
